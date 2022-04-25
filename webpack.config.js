@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index.ts',
   devServer: {
     historyApiFallback: true,
-    static: path.resolve(__dirname, 'dist'),
+    static: path.resolve(__dirname, 'docs'),
     hot: true
   },
   module: {
@@ -31,7 +31,7 @@ module.exports = {
   })],
   output: {
     filename: 'bundle.[hash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     clean: true,
   },
 };
