@@ -23,11 +23,16 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [new HtmlWebpackPlugin({
+    filename: 'index.html',
     inject: 'body',
     template: path.resolve(__dirname, 'src', 'index.ejs'),
     templateParameters: {
       title: 'Template',
     }
+  }), new HtmlWebpackPlugin({
+    filename: '404.html',
+    inject: undefined,
+    template: path.resolve(__dirname, 'src', '404.ejs'),
   })],
   output: {
     filename: 'bundle.[hash].js',
