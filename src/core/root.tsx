@@ -7,11 +7,10 @@ export const Root: React.FC = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Header />}>
-        <Route path="/"  element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
       </Route>
-      <Route path="/countdown-dark"  element={<CountdownPage color='dark' />} />
-      <Route path="/countdown-light"  element={<CountdownPage color='light' />} />
+      <Route path="/countdown-dark" element={<CountdownPage color='dark' />} />
+      <Route path="/countdown-light" element={<CountdownPage color='light' />} />
     </Routes>
   </BrowserRouter>
 );
-
