@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { Container, CountdownPageProps } from './countdown.style';
+import { DateCountdown } from './mols';
 
-import { DateCountdown } from '../mols';
+import { Container, CountdownPageProps } from './countdown.style';
 
 const DATE = new Date(2022, 4, 19, 20, 0, 0, 0);
 

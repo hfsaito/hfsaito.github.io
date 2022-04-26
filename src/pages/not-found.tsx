@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { H1 } from './components';
 
-export const HomePage: React.FC = () => (
+export const NotFoundPage: React.FC = () => (
   <main>
-    <H1>Home page</H1>
+    <H1>404 Page not found</H1>
   </main>
 );
 

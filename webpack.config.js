@@ -35,6 +35,7 @@ module.exports = {
     template: path.resolve(__dirname, 'src', '404.ejs'),
   })],
   output: {
+    publicPath: '/',
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'docs'),
     clean: true,

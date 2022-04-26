@@ -24,9 +24,14 @@ export const DateCountdown: React.FC<DateCountdownProps> = props => {
   const minutes = Math.floor(((dateTime - now) % HOUR) / MINUTE);
   const seconds = Math.floor(((dateTime - now) % MINUTE) / SECOND);
 
-  setTimeout(() => {
-    setNow(Date.now());
-  }, 1000);
+  React.useEffect(() => {
+    const intervalId = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <Container>
