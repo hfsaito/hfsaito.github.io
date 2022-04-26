@@ -6,7 +6,7 @@ import { CountdownPage, Header, HomePage, HobbiesPage, NotFoundPage } from '../p
 import { HobbiesIds, Theme } from '../states';
 
 export const Root: React.FC = () => (
-  <ThemeProvider  theme={Theme}>
+  <ThemeProvider theme={Theme}>
     <BrowserRouter>
       <Routes>
         <Route element={<Header />}>
@@ -14,7 +14,10 @@ export const Root: React.FC = () => (
           <Route path="hobbies" element={<HobbiesPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
-        <Route path={HobbiesIds.countdownDark} element={<CountdownPage color='dark' />} />
+        <Route path="notion-widget-countdown-dark" element={() => {
+          window.location.href = '/notion-widget-countdown-dark.html';
+          return <></>;
+        }} />
         <Route path={HobbiesIds.countdownLight} element={<CountdownPage color='light' />} />
       </Routes>
     </BrowserRouter>

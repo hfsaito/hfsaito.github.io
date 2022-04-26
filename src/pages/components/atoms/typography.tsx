@@ -42,3 +42,10 @@ export const Link = styled(RouterLink)`${({ theme: { typography, color }}) => `
   color: ${color.body};
   text-decoration: none;
 `}`;
+
+export const ExtLink = styled.a`${({ theme: { typography, color }}) => `
+  font-size: ${typography.size.xs}px;
+  font-family: ${typography.font};
+  color: ${color.body};
+  text-decoration: none;
+`}`;

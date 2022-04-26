@@ -33505,7 +33505,10 @@ var Root = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElemen
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HomePage, null) }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HobbiesPage, null) }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "*", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.NotFoundPage, null) })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: _states__WEBPACK_IMPORTED_MODULE_2__.HobbiesIds.countdownDark, element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'dark' }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "notion-widget-countdown-dark", element: function () {
+                    window.location.href = '/notion-widget-countdown-dark.html';
+                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null);
+                } }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: _states__WEBPACK_IMPORTED_MODULE_2__.HobbiesIds.countdownLight, element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'light' }) }))))); };
 
 
@@ -33544,6 +33547,7 @@ var setup = function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ExtLink": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.ExtLink),
 /* harmony export */   "H1": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H1),
 /* harmony export */   "H2": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H2),
 /* harmony export */   "H3": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H3),
@@ -33568,6 +33572,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ExtLink": () => (/* binding */ ExtLink),
 /* harmony export */   "H1": () => (/* binding */ H1),
 /* harmony export */   "H2": () => (/* binding */ H2),
 /* harmony export */   "H3": () => (/* binding */ H3),
@@ -33617,7 +33622,11 @@ var Link = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_r
     var _b = _a.theme, typography = _b.typography, color = _b.color;
     return "\n  font-size: ".concat(typography.size.xs, "px;\n  font-family: ").concat(typography.font, ";\n  color: ").concat(color.body, ";\n  text-decoration: none;\n");
 });
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+var ExtLink = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].a(templateObject_9 || (templateObject_9 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var _b = _a.theme, typography = _b.typography, color = _b.color;
+    return "\n  font-size: ".concat(typography.size.xs, "px;\n  font-family: ").concat(typography.font, ";\n  color: ").concat(color.body, ";\n  text-decoration: none;\n");
+});
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
 
 
 /***/ }),
@@ -33631,6 +33640,7 @@ var templateObject_1, templateObject_2, templateObject_3, templateObject_4, temp
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ExtLink": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.ExtLink),
 /* harmony export */   "H1": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H1),
 /* harmony export */   "H2": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H2),
 /* harmony export */   "H3": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H3),
@@ -33886,17 +33896,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "HobbiesPage": () => (/* binding */ HobbiesPage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _states__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../states */ "./src/states/index.ts");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./src/pages/components/index.ts");
-
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components */ "./src/pages/components/index.ts");
 
 
 var HobbiesPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null,
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_2__.H1, null, "Hobbies"),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H1, null, "Hobbies"),
     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_2__.Link, { to: _states__WEBPACK_IMPORTED_MODULE_1__.HobbiesIds.countdownDark }, "countdown-dark")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-dark.html" }, "countdown-dark")),
     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_2__.Link, { to: _states__WEBPACK_IMPORTED_MODULE_1__.HobbiesIds.countdownLight }, "countdown-light")))); };
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-light.html" }, "countdown-light")),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H2, null, "Tests"),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-dark.html" }, "countdown-dark")),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-light.html" }, "countdown-light")))); };
 
 
 /***/ }),
@@ -34190,4 +34203,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.70fb41c5387322523e29.js.map
+//# sourceMappingURL=bundle.efd67ad20f9fe5dfa1ff.js.map
