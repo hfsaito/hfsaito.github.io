@@ -34,21 +34,13 @@ module.exports = {
     inject: undefined,
     template: path.resolve(__dirname, 'src', '404.ejs'),
   }), new HtmlWebpackPlugin({
-    filename: 'notion-widget-countdown-dark.html',
-    inject: undefined,
-    template: path.resolve(__dirname, 'src', 'notion-widget-countdown-dark.ejs'),
-  }), new HtmlWebpackPlugin({
-    filename: 'notion-widget-countdown-light.html',
-    inject: undefined,
-    template: path.resolve(__dirname, 'src', 'notion-widget-countdown-light.ejs'),
-  }), new HtmlWebpackPlugin({
     filename: 'notion-widgets/countdown-dark.html',
     inject: undefined,
-    template: path.resolve(__dirname, 'src', 'notion-widget-countdown-dark.ejs'),
+    template: path.resolve(__dirname, 'src/notion-widgets', 'countdown-dark.ejs'),
   }), new HtmlWebpackPlugin({
     filename: 'notion-widgets/countdown-light.html',
     inject: undefined,
-    template: path.resolve(__dirname, 'src', 'notion-widget-countdown-light.ejs'),
+    template: path.resolve(__dirname, 'src/notion-widgets', 'countdown-light.ejs'),
   })],
   output: {
     publicPath: '/',

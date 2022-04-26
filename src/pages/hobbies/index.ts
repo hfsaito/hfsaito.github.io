@@ -1,2 +1,2 @@
-export * from './countdown';
+export * from './notion-widgets';
 export * from './hobbies';

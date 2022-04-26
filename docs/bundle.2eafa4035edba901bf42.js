@@ -33504,12 +33504,8 @@ var Root = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElemen
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.Header, null) },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HomePage, null) }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HobbiesPage, null) }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "*", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.NotFoundPage, null) })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "notion-widget-countdown-dark", element: function () {
-                    window.location.href = '/notion-widget-countdown-dark.html';
-                    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null);
-                } }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: _states__WEBPACK_IMPORTED_MODULE_2__.HobbiesIds.countdownLight, element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'light' }) }))))); };
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies/notion-widgets", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.NotionWidgetsPage, null) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "*", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.NotFoundPage, null) })))))); };
 
 
 /***/ }),
@@ -33720,170 +33716,6 @@ var Header = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElem
 
 /***/ }),
 
-/***/ "./src/pages/hobbies/countdown/countdown.style.tsx":
-/*!*********************************************************!*\
-  !*** ./src/pages/hobbies/countdown/countdown.style.tsx ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Container": () => (/* binding */ Container)
-/* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].main(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin: 0;\n  background-color: ", ";\n  color: ", ";\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 16px;\n"], ["\n  margin: 0;\n  background-color: ", ";\n  color: ", ";\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 16px;\n"])), function (props) { return props.color === 'dark' ? 'rgba(25, 25, 25, 1)' : 'rgba(255, 255, 255, 0.87)'; }, function (props) { return props.color === 'dark' ? 'rgba(255, 255, 255, 0.87)' : 'rgba(55, 53, 47, 1)'; });
-var templateObject_1;
-
-
-/***/ }),
-
-/***/ "./src/pages/hobbies/countdown/countdown.tsx":
-/*!***************************************************!*\
-  !*** ./src/pages/hobbies/countdown/countdown.tsx ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CountdownPage": () => (/* binding */ CountdownPage)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mols */ "./src/pages/hobbies/countdown/mols/index.ts");
-/* harmony import */ var _countdown_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./countdown.style */ "./src/pages/hobbies/countdown/countdown.style.tsx");
-
-
-
-var DATE = new Date(2022, 4, 19, 20, 0, 0, 0);
-var CountdownPage = function (props) {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_countdown_style__WEBPACK_IMPORTED_MODULE_2__.Container, { color: props.color },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mols__WEBPACK_IMPORTED_MODULE_1__.DateCountdown, { date: DATE })));
-};
-
-
-/***/ }),
-
-/***/ "./src/pages/hobbies/countdown/index.ts":
-/*!**********************************************!*\
-  !*** ./src/pages/hobbies/countdown/index.ts ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CountdownPage": () => (/* reexport safe */ _countdown__WEBPACK_IMPORTED_MODULE_0__.CountdownPage)
-/* harmony export */ });
-/* harmony import */ var _countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./countdown */ "./src/pages/hobbies/countdown/countdown.tsx");
-
-
-
-/***/ }),
-
-/***/ "./src/pages/hobbies/countdown/mols/date-countdown.style.tsx":
-/*!*******************************************************************!*\
-  !*** ./src/pages/hobbies/countdown/mols/date-countdown.style.tsx ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Container": () => (/* binding */ Container),
-/* harmony export */   "Label": () => (/* binding */ Label),
-/* harmony export */   "Number": () => (/* binding */ Number),
-/* harmony export */   "Unit": () => (/* binding */ Unit)
-/* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: 100vw;\n  height: 100vh;\n  text-transform: uppercase;\n  font-size: .7em;\n  letter-spacing: 5px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  text-align: center;\n  max-width: 500px;\n"], ["\n  width: 100vw;\n  height: 100vh;\n  text-transform: uppercase;\n  font-size: .7em;\n  letter-spacing: 5px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  text-align: center;\n  max-width: 500px;\n"])));
-var Unit = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  padding: 20px 10px;\n"], ["\n  padding: 20px 10px;\n"])));
-var Number = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  font-weight: bold;\n  font-size: 3em;\n  margin: 1em 0;\n  text-align: center;\n"], ["\n  font-weight: bold;\n  font-size: 3em;\n  margin: 1em 0;\n  text-align: center;\n"])));
-var Label = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  margin: 1em 0;\n"], ["\n  margin: 1em 0;\n"])));
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
-
-
-/***/ }),
-
-/***/ "./src/pages/hobbies/countdown/mols/date-countdown.tsx":
-/*!*************************************************************!*\
-  !*** ./src/pages/hobbies/countdown/mols/date-countdown.tsx ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "DateCountdown": () => (/* binding */ DateCountdown)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _date_countdown_style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./date-countdown.style */ "./src/pages/hobbies/countdown/mols/date-countdown.style.tsx");
-
-
-var SECOND = 1000;
-var MINUTE = 60 * SECOND;
-var HOUR = 60 * MINUTE;
-var DAY = 24 * HOUR;
-var DateCountdown = function (props) {
-    var _a = react__WEBPACK_IMPORTED_MODULE_0__.useState(Date.now()), now = _a[0], setNow = _a[1];
-    var dateTime = props.date.getTime();
-    var days = Math.floor((dateTime - now) / DAY);
-    var hours = Math.floor(((dateTime - now) % DAY) / HOUR);
-    var minutes = Math.floor(((dateTime - now) % HOUR) / MINUTE);
-    var seconds = Math.floor(((dateTime - now) % MINUTE) / SECOND);
-    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
-        var intervalId = setInterval(function () {
-            setNow(Date.now());
-        }, 1000);
-        return function () {
-            clearInterval(intervalId);
-        };
-    }, []);
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Container, null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Unit, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Number, null, days),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Label, null, "days")),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Unit, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Number, null, hours),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Label, null, "hours")),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Unit, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Number, null, minutes),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Label, null, "minutes")),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Unit, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Number, null, seconds),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Label, null, "seconds"))));
-};
-
-
-/***/ }),
-
-/***/ "./src/pages/hobbies/countdown/mols/index.ts":
-/*!***************************************************!*\
-  !*** ./src/pages/hobbies/countdown/mols/index.ts ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "DateCountdown": () => (/* reexport safe */ _date_countdown__WEBPACK_IMPORTED_MODULE_0__.DateCountdown)
-/* harmony export */ });
-/* harmony import */ var _date_countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./date-countdown */ "./src/pages/hobbies/countdown/mols/date-countdown.tsx");
-
-
-
-/***/ }),
-
 /***/ "./src/pages/hobbies/hobbies.tsx":
 /*!***************************************!*\
   !*** ./src/pages/hobbies/hobbies.tsx ***!
@@ -33902,14 +33734,7 @@ __webpack_require__.r(__webpack_exports__);
 var HobbiesPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null,
     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H1, null, "Hobbies"),
     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-dark.html" }, "countdown-dark")),
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-light.html" }, "countdown-light")),
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H2, null, "Tests"),
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-dark.html" }, "countdown-dark")),
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widget-countdown-light.html" }, "countdown-light")))); };
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "notion-widgets" }, "Notion Widgets")))); };
 
 
 /***/ }),
@@ -33923,13 +33748,55 @@ var HobbiesPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.creat
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CountdownPage": () => (/* reexport safe */ _countdown__WEBPACK_IMPORTED_MODULE_0__.CountdownPage),
-/* harmony export */   "HobbiesPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_1__.HobbiesPage)
+/* harmony export */   "HobbiesPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_1__.HobbiesPage),
+/* harmony export */   "NotionWidgetsPage": () => (/* reexport safe */ _notion_widgets__WEBPACK_IMPORTED_MODULE_0__.NotionWidgetsPage)
 /* harmony export */ });
-/* harmony import */ var _countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./countdown */ "./src/pages/hobbies/countdown/index.ts");
+/* harmony import */ var _notion_widgets__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./notion-widgets */ "./src/pages/hobbies/notion-widgets/index.ts");
 /* harmony import */ var _hobbies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hobbies */ "./src/pages/hobbies/hobbies.tsx");
 
 
+
+
+/***/ }),
+
+/***/ "./src/pages/hobbies/notion-widgets/index.ts":
+/*!***************************************************!*\
+  !*** ./src/pages/hobbies/notion-widgets/index.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NotionWidgetsPage": () => (/* reexport safe */ _notion_widgets__WEBPACK_IMPORTED_MODULE_0__.NotionWidgetsPage)
+/* harmony export */ });
+/* harmony import */ var _notion_widgets__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./notion-widgets */ "./src/pages/hobbies/notion-widgets/notion-widgets.tsx");
+
+
+
+/***/ }),
+
+/***/ "./src/pages/hobbies/notion-widgets/notion-widgets.tsx":
+/*!*************************************************************!*\
+  !*** ./src/pages/hobbies/notion-widgets/notion-widgets.tsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NotionWidgetsPage": () => (/* binding */ NotionWidgetsPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components */ "./src/pages/components/index.ts");
+
+
+var NotionWidgetsPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null,
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H1, null, "Notion Widgets"),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widgets/countdown-dark.html" }, "countdown-dark")),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.ExtLink, { href: "/notion-widgets/countdown-light.html" }, "countdown-light")))); };
 
 
 /***/ }),
@@ -33964,11 +33831,11 @@ var HomePage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createEl
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CountdownPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_0__.CountdownPage),
 /* harmony export */   "Header": () => (/* reexport safe */ _header__WEBPACK_IMPORTED_MODULE_1__.Header),
 /* harmony export */   "HobbiesPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_0__.HobbiesPage),
 /* harmony export */   "HomePage": () => (/* reexport safe */ _home__WEBPACK_IMPORTED_MODULE_2__.HomePage),
-/* harmony export */   "NotFoundPage": () => (/* reexport safe */ _not_found__WEBPACK_IMPORTED_MODULE_3__.NotFoundPage)
+/* harmony export */   "NotFoundPage": () => (/* reexport safe */ _not_found__WEBPACK_IMPORTED_MODULE_3__.NotFoundPage),
+/* harmony export */   "NotionWidgetsPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_0__.NotionWidgetsPage)
 /* harmony export */ });
 /* harmony import */ var _hobbies__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hobbies */ "./src/pages/hobbies/index.ts");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./src/pages/header.tsx");
@@ -34003,25 +33870,6 @@ var NotFoundPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.crea
 
 /***/ }),
 
-/***/ "./src/states/hobbies-ids.ts":
-/*!***********************************!*\
-  !*** ./src/states/hobbies-ids.ts ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HobbiesIds": () => (/* binding */ HobbiesIds)
-/* harmony export */ });
-var HobbiesIds = {
-    countdownDark: '/ed11b2e6-80b2-46e4-acd2-bcce047d55cf',
-    countdownLight: '/324ee1c8-05c3-49c6-b672-88a78a586402'
-};
-
-
-/***/ }),
-
 /***/ "./src/states/index.ts":
 /*!*****************************!*\
   !*** ./src/states/index.ts ***!
@@ -34031,12 +33879,9 @@ var HobbiesIds = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HobbiesIds": () => (/* reexport safe */ _hobbies_ids__WEBPACK_IMPORTED_MODULE_0__.HobbiesIds),
-/* harmony export */   "Theme": () => (/* reexport safe */ _theme__WEBPACK_IMPORTED_MODULE_1__.Theme)
+/* harmony export */   "Theme": () => (/* reexport safe */ _theme__WEBPACK_IMPORTED_MODULE_0__.Theme)
 /* harmony export */ });
-/* harmony import */ var _hobbies_ids__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hobbies-ids */ "./src/states/hobbies-ids.ts");
-/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./theme */ "./src/states/theme.ts");
-
+/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./theme */ "./src/states/theme.ts");
 
 
 
@@ -34203,4 +34048,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.efd67ad20f9fe5dfa1ff.js.map
+//# sourceMappingURL=bundle.2eafa4035edba901bf42.js.map
