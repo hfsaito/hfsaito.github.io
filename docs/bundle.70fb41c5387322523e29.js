@@ -33505,8 +33505,8 @@ var Root = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElemen
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HomePage, null) }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HobbiesPage, null) }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "*", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.NotFoundPage, null) })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies/countdown-dark", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'dark' }) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies/countdown-light", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'light' }) }))))); };
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: _states__WEBPACK_IMPORTED_MODULE_2__.HobbiesIds.countdownDark, element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'dark' }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: _states__WEBPACK_IMPORTED_MODULE_2__.HobbiesIds.countdownLight, element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'light' }) }))))); };
 
 
 /***/ }),
@@ -33886,15 +33886,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "HobbiesPage": () => (/* binding */ HobbiesPage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components */ "./src/pages/components/index.ts");
+/* harmony import */ var _states__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../states */ "./src/states/index.ts");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./src/pages/components/index.ts");
+
 
 
 var HobbiesPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null,
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H1, null, "Hobbies"),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_2__.H1, null, "Hobbies"),
     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/hobbies/countdown-dark" }, "countdown-dark")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_2__.Link, { to: _states__WEBPACK_IMPORTED_MODULE_1__.HobbiesIds.countdownDark }, "countdown-dark")),
     react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/hobbies/countdown-light" }, "countdown-light")))); };
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_2__.Link, { to: _states__WEBPACK_IMPORTED_MODULE_1__.HobbiesIds.countdownLight }, "countdown-light")))); };
 
 
 /***/ }),
@@ -33988,6 +33990,25 @@ var NotFoundPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.crea
 
 /***/ }),
 
+/***/ "./src/states/hobbies-ids.ts":
+/*!***********************************!*\
+  !*** ./src/states/hobbies-ids.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HobbiesIds": () => (/* binding */ HobbiesIds)
+/* harmony export */ });
+var HobbiesIds = {
+    countdownDark: '/ed11b2e6-80b2-46e4-acd2-bcce047d55cf',
+    countdownLight: '/324ee1c8-05c3-49c6-b672-88a78a586402'
+};
+
+
+/***/ }),
+
 /***/ "./src/states/index.ts":
 /*!*****************************!*\
   !*** ./src/states/index.ts ***!
@@ -33997,9 +34018,12 @@ var NotFoundPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.crea
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Theme": () => (/* reexport safe */ _theme__WEBPACK_IMPORTED_MODULE_0__.Theme)
+/* harmony export */   "HobbiesIds": () => (/* reexport safe */ _hobbies_ids__WEBPACK_IMPORTED_MODULE_0__.HobbiesIds),
+/* harmony export */   "Theme": () => (/* reexport safe */ _theme__WEBPACK_IMPORTED_MODULE_1__.Theme)
 /* harmony export */ });
-/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./theme */ "./src/states/theme.ts");
+/* harmony import */ var _hobbies_ids__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hobbies-ids */ "./src/states/hobbies-ids.ts");
+/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./theme */ "./src/states/theme.ts");
+
 
 
 
@@ -34166,4 +34190,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.7dde90033a424cf6f1ea.js.map
+//# sourceMappingURL=bundle.70fb41c5387322523e29.js.map
