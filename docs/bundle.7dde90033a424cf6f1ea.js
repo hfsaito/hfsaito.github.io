@@ -33488,18 +33488,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Root": () => (/* binding */ Root)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages */ "./src/pages/index.ts");
+/* harmony import */ var _states__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../states */ "./src/states/index.ts");
 
 
 
-var Root = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.BrowserRouter, null,
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Routes, null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.Header, null) },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HomePage, null) })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, { path: "/countdown-dark", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'dark' }) }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, { path: "/countdown-light", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'light' }) })))); };
+
+
+var Root = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_3__.ThemeProvider, { theme: _states__WEBPACK_IMPORTED_MODULE_2__.Theme },
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.Header, null) },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HomePage, null) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.HobbiesPage, null) }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "*", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.NotFoundPage, null) })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies/countdown-dark", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'dark' }) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "hobbies/countdown-light", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages__WEBPACK_IMPORTED_MODULE_1__.CountdownPage, { color: 'light' }) }))))); };
 
 
 /***/ }),
@@ -33528,10 +33535,251 @@ var setup = function () {
 
 /***/ }),
 
-/***/ "./src/mols/date-countdown.style.tsx":
-/*!*******************************************!*\
-  !*** ./src/mols/date-countdown.style.tsx ***!
-  \*******************************************/
+/***/ "./src/pages/components/atoms/index.ts":
+/*!*********************************************!*\
+  !*** ./src/pages/components/atoms/index.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "H1": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H1),
+/* harmony export */   "H2": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H2),
+/* harmony export */   "H3": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H3),
+/* harmony export */   "H4": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H4),
+/* harmony export */   "H5": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H5),
+/* harmony export */   "H6": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.H6),
+/* harmony export */   "Link": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.Link),
+/* harmony export */   "P": () => (/* reexport safe */ _typography__WEBPACK_IMPORTED_MODULE_0__.P)
+/* harmony export */ });
+/* harmony import */ var _typography__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typography */ "./src/pages/components/atoms/typography.tsx");
+
+
+
+/***/ }),
+
+/***/ "./src/pages/components/atoms/typography.tsx":
+/*!***************************************************!*\
+  !*** ./src/pages/components/atoms/typography.tsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "H1": () => (/* binding */ H1),
+/* harmony export */   "H2": () => (/* binding */ H2),
+/* harmony export */   "H3": () => (/* binding */ H3),
+/* harmony export */   "H4": () => (/* binding */ H4),
+/* harmony export */   "H5": () => (/* binding */ H5),
+/* harmony export */   "H6": () => (/* binding */ H6),
+/* harmony export */   "Link": () => (/* binding */ Link),
+/* harmony export */   "P": () => (/* binding */ P)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+
+var H1 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var typography = _a.theme.typography;
+    return "\n  font-size: ".concat(typography.size.xl, "px;\n  font-family: ").concat(typography.font, ";\n");
+});
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(templateObject_2 || (templateObject_2 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var typography = _a.theme.typography;
+    return "\n  font-size: ".concat(typography.size.lg, "px;\n  font-family: ").concat(typography.font, ";\n");
+});
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(templateObject_3 || (templateObject_3 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var typography = _a.theme.typography;
+    return "\n  font-size: ".concat(typography.size.md, "px;\n  font-family: ").concat(typography.font, ";\n");
+});
+var H4 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h4(templateObject_4 || (templateObject_4 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var typography = _a.theme.typography;
+    return "\n  font-size: ".concat(typography.size.md, "px;\n  font-family: ").concat(typography.font, ";\n");
+});
+var H5 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h5(templateObject_5 || (templateObject_5 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var typography = _a.theme.typography;
+    return "\n  font-size: ".concat(typography.size.sm, "px;\n  font-family: ").concat(typography.font, ";\n");
+});
+var H6 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h6(templateObject_6 || (templateObject_6 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var typography = _a.theme.typography;
+    return "\n  font-size: ".concat(typography.size.sm, "px;\n  font-family: ").concat(typography.font, ";\n");
+});
+var P = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p(templateObject_7 || (templateObject_7 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var typography = _a.theme.typography;
+    return "\n  font-size: ".concat(typography.size.xs, "px;\n  font-family: ").concat(typography.font, ";\n");
+});
+var Link = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link)(templateObject_8 || (templateObject_8 = __makeTemplateObject(["", ""], ["", ""])), function (_a) {
+    var _b = _a.theme, typography = _b.typography, color = _b.color;
+    return "\n  font-size: ".concat(typography.size.xs, "px;\n  font-family: ").concat(typography.font, ";\n  color: ").concat(color.body, ";\n  text-decoration: none;\n");
+});
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+
+
+/***/ }),
+
+/***/ "./src/pages/components/index.ts":
+/*!***************************************!*\
+  !*** ./src/pages/components/index.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "H1": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H1),
+/* harmony export */   "H2": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H2),
+/* harmony export */   "H3": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H3),
+/* harmony export */   "H4": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H4),
+/* harmony export */   "H5": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H5),
+/* harmony export */   "H6": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.H6),
+/* harmony export */   "Link": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.Link),
+/* harmony export */   "P": () => (/* reexport safe */ _atoms__WEBPACK_IMPORTED_MODULE_0__.P),
+/* harmony export */   "ProjectCard": () => (/* reexport safe */ _orgs__WEBPACK_IMPORTED_MODULE_1__.ProjectCard)
+/* harmony export */ });
+/* harmony import */ var _atoms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./atoms */ "./src/pages/components/atoms/index.ts");
+/* harmony import */ var _orgs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./orgs */ "./src/pages/components/orgs/index.ts");
+
+
+
+
+/***/ }),
+
+/***/ "./src/pages/components/orgs/index.ts":
+/*!********************************************!*\
+  !*** ./src/pages/components/orgs/index.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ProjectCard": () => (/* reexport safe */ _project_card__WEBPACK_IMPORTED_MODULE_0__.ProjectCard)
+/* harmony export */ });
+/* harmony import */ var _project_card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./project-card */ "./src/pages/components/orgs/project-card.tsx");
+
+
+
+/***/ }),
+
+/***/ "./src/pages/components/orgs/project-card.tsx":
+/*!****************************************************!*\
+  !*** ./src/pages/components/orgs/project-card.tsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ProjectCard": () => (/* binding */ ProjectCard)
+/* harmony export */ });
+var ProjectCard = function () {
+    return null;
+};
+
+
+/***/ }),
+
+/***/ "./src/pages/header.tsx":
+/*!******************************!*\
+  !*** ./src/pages/header.tsx ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Header": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components */ "./src/pages/components/index.ts");
+
+
+
+var Header = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null,
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/" }, "hfsaito.github.io"),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/hobbies" }, "Hobbies")),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Outlet, null))); };
+
+
+/***/ }),
+
+/***/ "./src/pages/hobbies/countdown/countdown.style.tsx":
+/*!*********************************************************!*\
+  !*** ./src/pages/hobbies/countdown/countdown.style.tsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Container": () => (/* binding */ Container)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].main(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin: 0;\n  background-color: ", ";\n  color: ", ";\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 16px;\n"], ["\n  margin: 0;\n  background-color: ", ";\n  color: ", ";\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 16px;\n"])), function (props) { return props.color === 'dark' ? 'rgba(25, 25, 25, 1)' : 'rgba(255, 255, 255, 0.87)'; }, function (props) { return props.color === 'dark' ? 'rgba(255, 255, 255, 0.87)' : 'rgba(55, 53, 47, 1)'; });
+var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./src/pages/hobbies/countdown/countdown.tsx":
+/*!***************************************************!*\
+  !*** ./src/pages/hobbies/countdown/countdown.tsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CountdownPage": () => (/* binding */ CountdownPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mols */ "./src/pages/hobbies/countdown/mols/index.ts");
+/* harmony import */ var _countdown_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./countdown.style */ "./src/pages/hobbies/countdown/countdown.style.tsx");
+
+
+
+var DATE = new Date(2022, 4, 19, 20, 0, 0, 0);
+var CountdownPage = function (props) {
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_countdown_style__WEBPACK_IMPORTED_MODULE_2__.Container, { color: props.color },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mols__WEBPACK_IMPORTED_MODULE_1__.DateCountdown, { date: DATE })));
+};
+
+
+/***/ }),
+
+/***/ "./src/pages/hobbies/countdown/index.ts":
+/*!**********************************************!*\
+  !*** ./src/pages/hobbies/countdown/index.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CountdownPage": () => (/* reexport safe */ _countdown__WEBPACK_IMPORTED_MODULE_0__.CountdownPage)
+/* harmony export */ });
+/* harmony import */ var _countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./countdown */ "./src/pages/hobbies/countdown/countdown.tsx");
+
+
+
+/***/ }),
+
+/***/ "./src/pages/hobbies/countdown/mols/date-countdown.style.tsx":
+/*!*******************************************************************!*\
+  !*** ./src/pages/hobbies/countdown/mols/date-countdown.style.tsx ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33557,10 +33805,10 @@ var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
 
 /***/ }),
 
-/***/ "./src/mols/date-countdown.tsx":
-/*!*************************************!*\
-  !*** ./src/mols/date-countdown.tsx ***!
-  \*************************************/
+/***/ "./src/pages/hobbies/countdown/mols/date-countdown.tsx":
+/*!*************************************************************!*\
+  !*** ./src/pages/hobbies/countdown/mols/date-countdown.tsx ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33569,7 +33817,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DateCountdown": () => (/* binding */ DateCountdown)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _date_countdown_style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./date-countdown.style */ "./src/mols/date-countdown.style.tsx");
+/* harmony import */ var _date_countdown_style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./date-countdown.style */ "./src/pages/hobbies/countdown/mols/date-countdown.style.tsx");
 
 
 var SECOND = 1000;
@@ -33583,9 +33831,14 @@ var DateCountdown = function (props) {
     var hours = Math.floor(((dateTime - now) % DAY) / HOUR);
     var minutes = Math.floor(((dateTime - now) % HOUR) / MINUTE);
     var seconds = Math.floor(((dateTime - now) % MINUTE) / SECOND);
-    setTimeout(function () {
-        setNow(Date.now());
-    }, 1000);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+        var intervalId = setInterval(function () {
+            setNow(Date.now());
+        }, 1000);
+        return function () {
+            clearInterval(intervalId);
+        };
+    }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Container, null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Unit, null,
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_date_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Number, null, days),
@@ -33604,10 +33857,10 @@ var DateCountdown = function (props) {
 
 /***/ }),
 
-/***/ "./src/mols/index.ts":
-/*!***************************!*\
-  !*** ./src/mols/index.ts ***!
-  \***************************/
+/***/ "./src/pages/hobbies/countdown/mols/index.ts":
+/*!***************************************************!*\
+  !*** ./src/pages/hobbies/countdown/mols/index.ts ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33615,83 +33868,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DateCountdown": () => (/* reexport safe */ _date_countdown__WEBPACK_IMPORTED_MODULE_0__.DateCountdown)
 /* harmony export */ });
-/* harmony import */ var _date_countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./date-countdown */ "./src/mols/date-countdown.tsx");
+/* harmony import */ var _date_countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./date-countdown */ "./src/pages/hobbies/countdown/mols/date-countdown.tsx");
 
 
 
 /***/ }),
 
-/***/ "./src/pages/countdown.style.tsx":
+/***/ "./src/pages/hobbies/hobbies.tsx":
 /*!***************************************!*\
-  !*** ./src/pages/countdown.style.tsx ***!
+  !*** ./src/pages/hobbies/hobbies.tsx ***!
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Container": () => (/* binding */ Container)
+/* harmony export */   "HobbiesPage": () => (/* binding */ HobbiesPage)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components */ "./src/pages/components/index.ts");
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].main(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin: 0;\n  background-color: ", ";\n  color: ", ";\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 16px;\n"], ["\n  margin: 0;\n  background-color: ", ";\n  color: ", ";\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 16px;\n"])), function (props) { return props.color === 'dark' ? 'rgba(25, 25, 25, 1)' : 'rgba(255, 255, 255, 0.87)'; }, function (props) { return props.color === 'dark' ? 'rgba(255, 255, 255, 0.87)' : 'rgba(55, 53, 47, 1)'; });
-var templateObject_1;
+
+var HobbiesPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null,
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H1, null, "Hobbies"),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/hobbies/countdown-dark" }, "countdown-dark")),
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/hobbies/countdown-light" }, "countdown-light")))); };
 
 
 /***/ }),
 
-/***/ "./src/pages/countdown.tsx":
-/*!*********************************!*\
-  !*** ./src/pages/countdown.tsx ***!
-  \*********************************/
+/***/ "./src/pages/hobbies/index.ts":
+/*!************************************!*\
+  !*** ./src/pages/hobbies/index.ts ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CountdownPage": () => (/* binding */ CountdownPage)
+/* harmony export */   "CountdownPage": () => (/* reexport safe */ _countdown__WEBPACK_IMPORTED_MODULE_0__.CountdownPage),
+/* harmony export */   "HobbiesPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_1__.HobbiesPage)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _countdown_style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./countdown.style */ "./src/pages/countdown.style.tsx");
-/* harmony import */ var _mols__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mols */ "./src/mols/index.ts");
+/* harmony import */ var _countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./countdown */ "./src/pages/hobbies/countdown/index.ts");
+/* harmony import */ var _hobbies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hobbies */ "./src/pages/hobbies/hobbies.tsx");
 
 
-
-var DATE = new Date(2022, 4, 19, 20, 0, 0, 0);
-var CountdownPage = function (props) {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_countdown_style__WEBPACK_IMPORTED_MODULE_1__.Container, { color: props.color },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mols__WEBPACK_IMPORTED_MODULE_2__.DateCountdown, { date: DATE })));
-};
-
-
-/***/ }),
-
-/***/ "./src/pages/header.tsx":
-/*!******************************!*\
-  !*** ./src/pages/header.tsx ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Header": () => (/* binding */ Header)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-
-
-var Header = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null,
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/" }, "hfsaito.github.io"),
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", null,
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/countdown-dark" }, "countdown-dark"),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, { to: "/countdown-light" }, "countdown-light")),
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Outlet, null))); };
 
 
 /***/ }),
@@ -33708,9 +33931,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "HomePage": () => (/* binding */ HomePage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components */ "./src/pages/components/index.ts");
+
 
 var HomePage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null,
-    react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Hello World"))); };
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H1, null, "Home page"))); };
 
 
 /***/ }),
@@ -33724,16 +33949,104 @@ var HomePage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createEl
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CountdownPage": () => (/* reexport safe */ _countdown__WEBPACK_IMPORTED_MODULE_0__.CountdownPage),
+/* harmony export */   "CountdownPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_0__.CountdownPage),
 /* harmony export */   "Header": () => (/* reexport safe */ _header__WEBPACK_IMPORTED_MODULE_1__.Header),
-/* harmony export */   "HomePage": () => (/* reexport safe */ _home__WEBPACK_IMPORTED_MODULE_2__.HomePage)
+/* harmony export */   "HobbiesPage": () => (/* reexport safe */ _hobbies__WEBPACK_IMPORTED_MODULE_0__.HobbiesPage),
+/* harmony export */   "HomePage": () => (/* reexport safe */ _home__WEBPACK_IMPORTED_MODULE_2__.HomePage),
+/* harmony export */   "NotFoundPage": () => (/* reexport safe */ _not_found__WEBPACK_IMPORTED_MODULE_3__.NotFoundPage)
 /* harmony export */ });
-/* harmony import */ var _countdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./countdown */ "./src/pages/countdown.tsx");
+/* harmony import */ var _hobbies__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hobbies */ "./src/pages/hobbies/index.ts");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./src/pages/header.tsx");
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home */ "./src/pages/home.tsx");
+/* harmony import */ var _not_found__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./not-found */ "./src/pages/not-found.tsx");
 
 
 
+
+
+
+/***/ }),
+
+/***/ "./src/pages/not-found.tsx":
+/*!*********************************!*\
+  !*** ./src/pages/not-found.tsx ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NotFoundPage": () => (/* binding */ NotFoundPage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components */ "./src/pages/components/index.ts");
+
+
+var NotFoundPage = function () { return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null,
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components__WEBPACK_IMPORTED_MODULE_1__.H1, null, "404 Page not found"))); };
+
+
+/***/ }),
+
+/***/ "./src/states/index.ts":
+/*!*****************************!*\
+  !*** ./src/states/index.ts ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Theme": () => (/* reexport safe */ _theme__WEBPACK_IMPORTED_MODULE_0__.Theme)
+/* harmony export */ });
+/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./theme */ "./src/states/theme.ts");
+
+
+
+/***/ }),
+
+/***/ "./src/states/theme.ts":
+/*!*****************************!*\
+  !*** ./src/states/theme.ts ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Theme": () => (/* binding */ Theme)
+/* harmony export */ });
+var TYPOGRAPHY_BASE = 16;
+var SPACING_BASE = 8;
+var Theme = {
+    typography: {
+        size: {
+            xs: TYPOGRAPHY_BASE,
+            sm: TYPOGRAPHY_BASE * 1.5,
+            md: TYPOGRAPHY_BASE * 2,
+            lg: TYPOGRAPHY_BASE * 3,
+            xl: TYPOGRAPHY_BASE * 4
+        },
+        font: 'sans-serif'
+    },
+    spacing: {
+        xs: SPACING_BASE,
+        sm: SPACING_BASE * 1.5,
+        md: SPACING_BASE * 2,
+        lg: SPACING_BASE * 3,
+        xl: SPACING_BASE * 4
+    },
+    color: {
+        primary: 'blue',
+        secondary: 'pink',
+        success: 'green',
+        warning: 'orange',
+        danger: 'red',
+        info: 'cyan',
+        body: 'black',
+        muted: 'gray'
+    }
+};
 
 
 /***/ }),
@@ -33853,4 +34166,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.59896aae3bd6a16a4748.js.map
+//# sourceMappingURL=bundle.7dde90033a424cf6f1ea.js.map
