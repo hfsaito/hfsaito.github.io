@@ -38,8 +38,12 @@
     footer, header, hgroup, menu, nav, section {
       display: block;
     }
+    html {
+      height: 100%;
+    }
     body {
       line-height: 1;
+      height: 100%;
     }
     ol, ul {
       list-style: none;
@@ -56,10 +60,10 @@
       border-collapse: collapse;
       border-spacing: 0;
     }
+    #root {
+      height: 100%;
+    }
   </style>
-</head>
-<body>
-  <div id="root"></div>
   <!-- Start Single Page Apps for GitHub Pages -->
   <script type="text/javascript">
     // Single Page Apps for GitHub Pages
@@ -84,5 +88,8 @@
     }(window.location))
   </script>
   <!-- End Single Page Apps for GitHub Pages -->
+</head>
+<body>
+  <div id="root"></div>
 </body>
 </html>

@@ -1,5 +1,8 @@
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+
+const notionWidgetFiles = fs.readdirSync('./src/notion-widgets');
 
 module.exports = {
   mode: 'development',
@@ -22,29 +25,28 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  plugins: [new HtmlWebpackPlugin({
-    filename: 'index.html',
-    inject: 'body',
-    template: path.resolve(__dirname, 'src', 'index.ejs'),
-    templateParameters: {
-      title: 'Template',
-    }
-  }), new HtmlWebpackPlugin({
-    filename: '404.html',
-    inject: undefined,
-    template: path.resolve(__dirname, 'src', '404.ejs'),
-  }), new HtmlWebpackPlugin({
-    filename: 'notion-widgets/countdown-dark.html',
-    inject: undefined,
-    template: path.resolve(__dirname, 'src/notion-widgets', 'countdown-dark.ejs'),
-  }), new HtmlWebpackPlugin({
-    filename: 'notion-widgets/countdown-light.html',
-    inject: undefined,
-    template: path.resolve(__dirname, 'src/notion-widgets', 'countdown-light.ejs'),
-  })],
+  plugins: [
+      new HtmlWebpackPlugin({
+      filename: 'index.html',
+      inject: 'body',
+      template: path.resolve(__dirname, 'src', 'index.ejs'),
+      templateParameters: {
+        title: 'Template',
+      }
+    }), new HtmlWebpackPlugin({
+      filename: '404.html',
+      inject: false,
+      template: path.resolve(__dirname, 'src', '404.ejs'),
+    }),
+    ...(notionWidgetFiles.map(file => new HtmlWebpackPlugin({
+      filename: 'notion-widgets/' + file.replace('.ejs', '.html'),
+      inject: false,
+      template: path.resolve(__dirname, 'src/notion-widgets', file),
+    })))
+  ],
   output: {
     publicPath: '/',
-    filename: 'bundle.[hash].js',
+    filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'docs'),
     clean: true,
   },
