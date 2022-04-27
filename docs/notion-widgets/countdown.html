@@ -27,11 +27,13 @@
       font-weight: bold;
       font-size: 3em;
       text-align: center;
-    }</style></head><body><div class="timer"><div class="timer-unit"><p id="days" class="numbers"></p><p>days</p></div><div class="timer-unit"><p id="hours" class="numbers"></p><p>hours</p></div><div class="timer-unit"><p id="minutes" class="numbers"></p><p>minutes</p></div><div class="timer-unit"><p id="seconds" class="numbers"></p><p>seconds</p></div></div><script>const SECOND = 1000;
+    }</style></head><body><div class="timer"><div class="timer-unit"><p id="days" class="numbers"></p><p>days</p></div><div class="timer-unit"><p id="hours" class="numbers"></p><p>hours</p></div><div class="timer-unit"><p id="minutes" class="numbers"></p><p>minutes</p></div><div class="timer-unit"><p id="seconds" class="numbers"></p><p>seconds</p></div></div><script>const params = new URLSearchParams(window.location.search);
+
+    const SECOND = 1000;
     const MINUTE = 60 * SECOND;
     const HOUR = 60 * MINUTE;
     const DAY = 24 * HOUR;
-    const DATE = new Date(2022, 10, 5, 12, 0, 0, 0).getTime();
+    const DATE = new Date(params.get('date')).getTime();
 
     const elSeconds = document.querySelector('#seconds');
     const elMinutes = document.querySelector('#minutes');

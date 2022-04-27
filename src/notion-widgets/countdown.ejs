@@ -58,11 +58,13 @@
     </div>
   </div>
   <script>
+    const params = new URLSearchParams(window.location.search);
+
     const SECOND = 1000;
     const MINUTE = 60 * SECOND;
     const HOUR = 60 * MINUTE;
     const DAY = 24 * HOUR;
-    const DATE = new Date(2022, 4, 19, 20, 0, 0, 0).getTime();
+    const DATE = new Date(params.get('date')).getTime();
 
     const elSeconds = document.querySelector('#seconds');
     const elMinutes = document.querySelector('#minutes');
