@@ -25,13 +25,8 @@ const plugins = glob.sync('./src/**/*.ejs').map(templatePath => {
   htmlWebpackPluginOptions.template = path.resolve(__dirname, templatePath);
   htmlWebpackPluginOptions.templateParameters = { title: 'Template' };
 
-  console.log(templatePath);
-  console.log(JSON.stringify(htmlWebpackPluginOptions, null, 2));
-
   return new HtmlWebpackPlugin(htmlWebpackPluginOptions);
 });
-
-console.log(JSON.stringify(entry, null, 2));
 
 module.exports = {
   mode: 'development',
