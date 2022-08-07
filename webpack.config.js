@@ -1,13 +1,42 @@
-const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const glob = require('glob');
 
-const notionWidgetFiles = fs.readdirSync('./src/notion-widgets');
+const entry = glob.sync('./src/*/index.ts').reduce((entries, entry) => {
+  const entryKey = entry.replace(/\.\/src\/(?:index\/)?(.*index).ts/g, '$1');
+  entries[entryKey] = entry;
+  return entries;
+}, {});
+
+const plugins = glob.sync('./src/**/*.ejs').map(templatePath => {
+  const htmlWebpackPluginOptions = {};
+  htmlWebpackPluginOptions.filename = templatePath.replace(/^\.\/src\/(?:index\/)?(.*).ejs$/g, '$1.html');
+
+  if (templatePath.endsWith('index.ejs')) {
+    htmlWebpackPluginOptions.inject = 'body';
+
+    const entryKey = templatePath.replace(/\.\/src\/(?:index\/)?(.*index).ejs/g, '$1');
+    htmlWebpackPluginOptions.chunks = [entryKey];
+
+    // htmlWebpackPluginOptions.publicPath = templatePath.replace(/^\.\/src(?:\/index)?(\/.*)index.ejs$/g, '$1');
+  } else {
+    htmlWebpackPluginOptions.inject = false;
+  }
+  htmlWebpackPluginOptions.template = path.resolve(__dirname, templatePath);
+  htmlWebpackPluginOptions.templateParameters = { title: 'Template' };
+
+  console.log(templatePath);
+  console.log(JSON.stringify(htmlWebpackPluginOptions, null, 2));
+
+  return new HtmlWebpackPlugin(htmlWebpackPluginOptions);
+});
+
+console.log(JSON.stringify(entry, null, 2));
 
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: './src/index.ts',
+  entry,
   devServer: {
     historyApiFallback: true,
     static: path.resolve(__dirname, 'docs'),
@@ -20,33 +49,24 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[contenthash].[ext]',
+          outputPath: 'assets/imgs',
+          publicPath: 'assets/imgs'
+        },
+      },
     ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  plugins: [
-      new HtmlWebpackPlugin({
-      filename: 'index.html',
-      inject: 'body',
-      template: path.resolve(__dirname, 'src', 'index.ejs'),
-      templateParameters: {
-        title: 'Template',
-      }
-    }), new HtmlWebpackPlugin({
-      filename: '404.html',
-      inject: false,
-      template: path.resolve(__dirname, 'src', '404.ejs'),
-    }),
-    ...(notionWidgetFiles.map(file => new HtmlWebpackPlugin({
-      filename: 'notion-widgets/' + file.replace('.ejs', '.html'),
-      inject: false,
-      template: path.resolve(__dirname, 'src/notion-widgets', file),
-    })))
-  ],
+  plugins,
   output: {
     publicPath: '/',
-    filename: 'bundle.[contenthash].js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'docs'),
     clean: true,
   },

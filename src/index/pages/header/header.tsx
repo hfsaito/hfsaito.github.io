@@ -17,7 +17,6 @@ export const Header: React.FC = () => {
             Hiroshi Saito
           </Link>
           <nav>
-            <Link to="/about" color='primary' muted={location.pathname === '/about'}>About</Link>
             <Link to="/hobbies" color='primary' muted={location.pathname === '/hobbies'}>Hobbies</Link>
           </nav>
         </Container>
