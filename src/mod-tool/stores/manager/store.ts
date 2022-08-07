@@ -1,4 +1,5 @@
-import { isArray, mergeWith } from 'lodash';
+import isArray from 'lodash/isArray';
+import mergeWith from 'lodash/mergeWith';
 
 type Listener = () => void;
 type DeepPartial<T> = T extends object ? {

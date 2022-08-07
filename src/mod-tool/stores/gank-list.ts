@@ -1,4 +1,7 @@
-import { chunk, flatten, merge, uniq } from 'lodash';
+import chunk from 'lodash/chunk';
+import flatten from 'lodash/flatten';
+import merge from 'lodash/merge';
+import uniq from 'lodash/uniq';
 
 import { Twitch, twitch } from "../apis";
 import { ImgUserNotFound } from '../assets';
