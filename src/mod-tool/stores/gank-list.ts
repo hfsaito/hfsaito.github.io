@@ -1,23 +1,33 @@
-import { chunk, flatten, map, merge, uniq } from 'lodash';
+import { chunk, flatten, merge, uniq } from 'lodash';
 
 import { Twitch, twitch } from "../apis";
 import { ImgUserNotFound } from '../assets';
 import { Channel } from "../utils";
 
-import { Store } from "./manager";
+import { Updater, Store } from "./manager";
+import { NewStorage, STORAGE_KEY } from './storage';
 
 type TwitchStream = Twitch['Streams']['Get']['Response']['data'][0];
 type TwitchUser = Twitch['Users']['Get']['Response']['data'][0];
 type UserStreamByLogin = { [key: string]: { user: TwitchUser, stream: TwitchStream } };
 
-type ExampleState = {
+type GankListState = {
   channels: Channel[];
   loading: boolean;
 };
 
-class GankListStore extends Store<ExampleState> {
+class GankListStore extends Store<GankListState> {
   constructor() {
     super({ channels: [], loading: false });
+    const imported = NewStorage.get(STORAGE_KEY.GANK_LIST) as string;
+    if (imported) {
+      this.importList(imported);
+    }
+  }
+
+  setState(updater: Updater<GankListState>) {
+    super.setState(updater);
+    NewStorage.set(STORAGE_KEY.GANK_LIST, this.exportList());
   }
 
   async setChannels(displayNames: string[]) {
@@ -60,10 +70,10 @@ class GankListStore extends Store<ExampleState> {
 
         let status: Channel['status'] = 'not-found';
 
-        if (Boolean(user)) {
+        if (user) {
           status = 'offline';
         }
-        if (Boolean(stream)) {
+        if (stream) {
           status = 'online';
         }
 
@@ -95,6 +105,20 @@ class GankListStore extends Store<ExampleState> {
 
   getNotFoundChannels() {
     return this.state.channels.filter(channel => channel.status === 'not-found');
+  }
+
+  importList(raw: string) {
+    const displayNames = raw.split(',').map(name => name.trim());
+    this.setChannels(displayNames);
+  }
+
+  exportList() {
+    return this.state.channels.map(channel => channel.name).join(', ');
+  }
+
+  saveList() {
+    const list = this.exportList();
+    NewStorage.set(STORAGE_KEY.GANK_LIST, list);
   }
 }
 

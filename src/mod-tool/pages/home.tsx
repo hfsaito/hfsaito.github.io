@@ -1,10 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { H1, Style, ListChannels, Container, Button, HSpace, VSpace } from '../components';
+import { H1, ListChannels, Container, Button, HSpace, VSpace } from '../components';
 import { gankListStore, useStore } from '../stores';
-
-const users = 'Gaules, Taltera, KAAIM, akalimara, Taltera, BauruGG, edz_jujuba, IsaFoxys, tiaguerafps, dzn011, cozacz, tehz1nha, tauevc, portugamax, marcol0pes, majindjx, Mavizinha_s2, ViniOMochilinha, ThaayMarqs, haruxit, sdSuhh, jenninhachan, lueartesanato, cristinaaw, Stagee_, AntonioJogaOficial, FifaTeca66, tiemiau, leonardofz_, camiscardoso, joel0ko, zard0_, Girovanni, DVKing_, beatrizbottino, vitorcaffe, mouusi, itgoldfish, truematu, leitedomsn, mayp19, se_aysha, wmj10, toddyhs';
 
 const ActionsContainer = styled.div`
   display: flex;
@@ -13,11 +11,18 @@ const ActionsContainer = styled.div`
 export const HomePage: React.FC = () => {
   useStore(gankListStore);
 
-  const refresh = React.useCallback(() => {
-    gankListStore.setChannels(users.split(',').map(user => user.trim()));
+  const importList = React.useCallback(async () => {
+    const imported = await navigator.clipboard.readText();
+    const displayNames = imported.split(',').map(name => name.trim());
+    gankListStore.setChannels(displayNames);
   }, []);
-  React.useEffect(() => {
-    refresh();
+  const exportList = React.useCallback(() => {
+    const exported = gankListStore.state.channels.map(channel => channel.name).join(', ');
+    navigator.clipboard.writeText(exported);
+  }, []);
+  const refresh = React.useCallback(() => {
+    const displayNames = gankListStore.state.channels.map(channel => channel.name);
+    gankListStore.setChannels(displayNames);
   }, []);
 
   return (
@@ -27,12 +32,16 @@ export const HomePage: React.FC = () => {
         <VSpace />
         <ActionsContainer>
           <HSpace />
-          <Button onClick={refresh} disabled={gankListStore.state.loading}>
-            Refresh
+          <Button onClick={importList} disabled={gankListStore.state.loading}>
+            Import
           </Button>
           <HSpace />
-          <Button disabled={gankListStore.state.loading}>
-            Save
+          <Button onClick={exportList} disabled={gankListStore.state.loading}>
+            Export
+          </Button>
+          <HSpace />
+          <Button onClick={refresh} disabled={gankListStore.state.loading}>
+            Refresh
           </Button>
           <HSpace />
         </ActionsContainer>

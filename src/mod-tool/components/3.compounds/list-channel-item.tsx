@@ -118,6 +118,9 @@ export const ListChannelItem: React.FC<ListChannelItemProps> = ({ channel, index
   }[channel.status];
   
   const remove = React.useCallback(() => gankListStore.removeChannel(index), [index]);
+  const copy = React.useCallback(() => {
+    navigator.clipboard.writeText(`/raid ${channel.name}`);
+  }, [channel.name]);
 
   return (
     <Container status={channel.status}>
@@ -148,7 +151,7 @@ export const ListChannelItem: React.FC<ListChannelItemProps> = ({ channel, index
         <HSpace />
         {channel.status === 'online' && (
           <>
-            <Button color='primary'>
+            <Button color='primary' onClick={copy}>
               Copy "/raid {channel.name}"
             </Button>
             <HSpace />

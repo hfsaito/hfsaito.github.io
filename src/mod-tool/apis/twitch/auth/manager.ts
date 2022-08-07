@@ -7,12 +7,16 @@ export class AuthManager {
   static async getToken() {
     if (Token.isExpired()) {
       if (!AuthManager.generatingToken) {
-        AuthManager.generatingToken = new Promise(async done => {
-          const response = await clientCredentials();
-          Token.set(response.access_token, response.expires_in);
-          done();
-          AuthManager.generatingToken = null;
-        });
+        AuthManager.generatingToken = clientCredentials()
+          .then(response => {
+            Token.set(response.access_token, response.expires_in);
+            AuthManager.generatingToken = null;
+          })
+          .catch(() => {
+            alert('Auth error');
+            Token.clear();
+            AuthManager.generatingToken = null;
+          });
       }
       await AuthManager.generatingToken;
     }

@@ -40,5 +40,5 @@ export const get: Get = async (params) => {
     { params }
   );
 
-  return response.data;
+  return response?.data ?? { data: [], pagination: {} };
 };

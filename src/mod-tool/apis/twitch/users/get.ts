@@ -36,7 +36,11 @@ export const get: Get = async (params) => {
   const response = await requester.get<GetResponse>(
     `${TWITCH_API_URL}/users`,
     { params }
-  );
+  )
+  .catch(() => {
+    alert('Unexpected error');
+    return null;
+  });
 
-  return response.data;
+  return response?.data ?? { data: [] };
 };

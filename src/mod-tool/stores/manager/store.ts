@@ -4,7 +4,7 @@ type Listener = () => void;
 type DeepPartial<T> = T extends object ? {
   [P in keyof T]?: DeepPartial<T[P]>;
 } : T;
-type Updater<S> = DeepPartial<S> | ((prevValue: S) => DeepPartial<S>);
+export type Updater<S> = DeepPartial<S> | ((prevValue: S) => DeepPartial<S>);
 
 class StoreCounter {
   private static counter = 0;
@@ -21,7 +21,7 @@ export class Store<State> {
     this.state = initialState;
   }
 
-  setState = (updater: Updater<State>): void => {
+  setState(updater: Updater<State>): void {
     let nextState: DeepPartial<State>;
 
     if (updater instanceof Function) {
@@ -46,11 +46,11 @@ export class Store<State> {
     this._listeners.every(listener => listener());
   }
 
-  _subscribe = (fn: Listener): void => {
+  _subscribe(fn: Listener): void {
     this._listeners.push(fn);
   }
 
-  _unsubscribe = (fn: Listener): void => {
+  _unsubscribe(fn: Listener): void {
     this._listeners = this._listeners.filter(listener => listener !== fn);
   }
 }

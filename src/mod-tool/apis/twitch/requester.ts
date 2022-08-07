@@ -6,6 +6,9 @@ import { AuthManager } from './auth';
 export const requester = axios.create();
 requester.interceptors.request.use(async (config: AxiosRequestConfig) => {
   const token = await AuthManager.getToken();
+  if (!token) {
+    throw 'Missing token'
+  }
   config.headers = {
     ...(config.headers ?? {}),
     Authorization: `Bearer ${token}`,
@@ -13,4 +16,9 @@ requester.interceptors.request.use(async (config: AxiosRequestConfig) => {
     'Content-Type': 'application/json'
   };
   return config;
+}, () => null);
+
+requester.interceptors.response.use(res => res, () => {
+  alert('Twtich response error. Wrong import format maybe');
+  return null;
 });
