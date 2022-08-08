@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Style } from "../../constants";
+import { Style } from "@constants";
 
 export const HeaderElement = styled.header`
   background: ${Style.color.primary.background};

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ExtLink, H1, Link } from '../../components';
+import { ExtLink, H1, Link } from '@components';
 
 export const HobbiesPage: React.FC = () => (
   <>

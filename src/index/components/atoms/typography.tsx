@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import styled from "styled-components";
 
-import { handleStyleCommon, Style, StyleCommon, StyleType } from '../../constants';
+import { handleStyleCommon, Style, StyleCommon, StyleType } from '@constants';
 
 type TypographyProps = StyleCommon & {
   readonly color?: keyof StyleType['color'];

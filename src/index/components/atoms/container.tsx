@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { handleStyleCommon, Style, StyleCommon } from "../../constants";
+
+import { handleStyleCommon, Style, StyleCommon } from "@constants";
 
 export const Container = styled.div<StyleCommon>`
   margin: 0 auto;

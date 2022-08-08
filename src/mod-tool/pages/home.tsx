@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { H1, ListChannels, Container, Button, HSpace, VSpace } from '../components';
-import { gankListStore, useStore } from '../stores';
+import { H1, ListChannels, Container, Button, HSpace, VSpace } from '@mod-tool/components';
+import { gankListStore, useStore } from '@mod-tool/stores';
 
 const ActionsContainer = styled.div`
   display: flex;

@@ -3,9 +3,9 @@ import flatten from 'lodash/flatten';
 import merge from 'lodash/merge';
 import uniq from 'lodash/uniq';
 
-import { Twitch, twitch } from "../apis";
-import { ImgUserNotFound } from '../assets';
-import { Channel } from "../utils";
+import { Twitch, twitch } from "@mod-tool/apis";
+import { ImgUserNotFound } from '@mod-tool/assets';
+import { Channel } from "@mod-tool/utils";
 
 import { Updater, Store } from "./manager";
 import { NewStorage, STORAGE_KEY } from './storage';

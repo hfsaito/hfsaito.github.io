@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
-import { Container, Link } from '../../components';
+import { Container, Link } from '@components';
 
 import { HeaderElement, Main } from './header.style';
 

@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-import { Channel, displayNumber } from "../../utils";
-import { gankListStore, useStore } from "../../stores";
+import { Channel, displayNumber } from "@mod-tool/utils";
+import { gankListStore, useStore } from "@mod-tool/stores";
 
 import { Button, HSpace } from "../2.mols";
 

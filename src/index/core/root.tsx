@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { NotionWidgetsPage, Header, HomePage, HobbiesPage, NotFoundPage } from '../pages';
+import { NotionWidgetsPage, Header, HomePage, HobbiesPage, NotFoundPage } from '@pages';
 
 export const Root: React.FC = () => (
   <BrowserRouter>

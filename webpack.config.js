@@ -1,11 +1,29 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const fs = require('fs');
 const glob = require('glob');
+const path = require('path');
 
 const entry = glob.sync('./src/*/index.ts').reduce((entries, entry) => {
   const entryKey = entry.replace(/\.\/src\/(?:index\/)?(.*index).ts/g, '$1');
   entries[entryKey] = entry;
   return entries;
+}, {});
+
+const alias = glob.sync('./src/*/index.ts').reduce((aliases, entry) => {
+  const absolutePath = entry.replace(/\.\/(src.*)\/index.ts/g, '$1');
+  let relativePath = entry.replace(/\.\/src\/(.*)\/index.ts/g, '$1');
+  if (relativePath === 'index') {
+    relativePath = '';
+  }
+  const aliasNames = fs.readdirSync(absolutePath)
+    .filter(fileOrDir => fs.lstatSync(absolutePath + '/' + fileOrDir).isDirectory());
+
+  const buildAlias = (aliasName) => '@' + path.join(relativePath, aliasName);
+  const buildPath = (aliasName) => path.resolve(__dirname, absolutePath, aliasName);
+
+  aliasNames.map(aliasName => [buildAlias(aliasName), buildPath(aliasName)])
+    .forEach(([k, v]) => aliases[k] = v);
+  return aliases;
 }, {});
 
 const plugins = glob.sync('./src/**/*.ejs').map(templatePath => {
@@ -56,6 +74,7 @@ module.exports = {
     ],
   },
   resolve: {
+    alias,
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins,

@@ -7,6 +7,34 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@components": ["index/components"],
+      "@components/*": ["index/components/*"],
+      "@constants": ["index/constants"],
+      "@constants/*": ["index/constants/*"],
+      "@core": ["index/core"],
+      "@core/*": ["index/core/*"],
+      "@pages": ["index/pages"],
+      "@pages/*": ["index/pages/*"],
+      "@states": ["index/states"],
+      "@states/*": ["index/states/*"],
+      "@mod-tool/apis": ["mod-tool/apis"],
+      "@mod-tool/apis/*": ["mod-tool/apis/*"],
+      "@mod-tool/assets": ["mod-tool/assets"],
+      "@mod-tool/assets/*": ["mod-tool/assets/*"],
+      "@mod-tool/components": ["mod-tool/components"],
+      "@mod-tool/components/*": ["mod-tool/components/*"],
+      "@mod-tool/core": ["mod-tool/core"],
+      "@mod-tool/core/*": ["mod-tool/core/*"],
+      "@mod-tool/pages": ["mod-tool/pages"],
+      "@mod-tool/pages/*": ["mod-tool/pages/*"],
+      "@mod-tool/stores": ["mod-tool/stores"],
+      "@mod-tool/stores/*": ["mod-tool/stores/*"],
+      "@mod-tool/utils": ["mod-tool/utils"],
+      "@mod-tool/utils/*": ["mod-tool/utils/*"],
+      "*": ["node_modules/*"]
+    }
   }
 }
