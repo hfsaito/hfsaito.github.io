@@ -41,7 +41,7 @@ const plugins = glob.sync('./src/**/*.ejs').map(templatePath => {
     htmlWebpackPluginOptions.inject = false;
   }
   htmlWebpackPluginOptions.template = path.resolve(__dirname, templatePath);
-  htmlWebpackPluginOptions.templateParameters = { title: 'Template' };
+  htmlWebpackPluginOptions.templateParameters = { title: 'Hiroshi Farias Saito - Software engineer' };
 
   return new HtmlWebpackPlugin(htmlWebpackPluginOptions);
 });
