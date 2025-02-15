@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { H1 } from '@components';
+import { H1 } from '@/index/components';
 
 export const NotFoundPage: React.FC = () => (
   <main>

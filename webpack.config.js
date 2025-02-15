@@ -12,13 +12,13 @@ const entry = glob.sync('./src/*/index.ts').reduce((entries, entry) => {
 const alias = glob.sync('./src/*/index.ts').reduce((aliases, entry) => {
   const absolutePath = entry.replace(/\.\/(src.*)\/index.ts/g, '$1');
   let relativePath = entry.replace(/\.\/src\/(.*)\/index.ts/g, '$1');
-  if (relativePath === 'index') {
-    relativePath = '';
-  }
+  // if (relativePath === 'index') {
+  //   relativePath = '';
+  // }
   const aliasNames = fs.readdirSync(absolutePath)
     .filter(fileOrDir => fs.lstatSync(absolutePath + '/' + fileOrDir).isDirectory());
 
-  const buildAlias = (aliasName) => '@' + path.join(relativePath, aliasName);
+  const buildAlias = (aliasName) => '@/' + path.join(relativePath, aliasName);
   const buildPath = (aliasName) => path.resolve(__dirname, absolutePath, aliasName);
 
   aliasNames.map(aliasName => [buildAlias(aliasName), buildPath(aliasName)])
@@ -60,6 +60,11 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {

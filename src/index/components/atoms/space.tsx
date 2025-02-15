@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Style, StyleType } from "@constants";
+import { Style, StyleType } from "@/index/constants";
 
 type SpaceProps = {
   size?: keyof StyleType['space']

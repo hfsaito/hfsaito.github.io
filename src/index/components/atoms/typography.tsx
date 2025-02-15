@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import styled from "styled-components";
 
-import { handleStyleCommon, Style, StyleCommon, StyleType } from '@constants';
+import { handleStyleCommon, Style, StyleCommon, StyleType } from '@/index/constants';
 
 type TypographyProps = StyleCommon & {
   readonly color?: keyof StyleType['color'];
@@ -70,7 +70,7 @@ export const Link = styled(RouterLink)<LinkProps>`
   color: ${props => Style.color[props.color ?? 'body'].content};
   font-size: ${props => Style.typography.size[props.size ?? 'xs']}px;
   font-family: ${Style.typography.font};
-  display: inline-block; 
+  display: inline-block;
   text-decoration: none;
   ${props => (props.muted ?? false) ? 'pointer-events: none;' : ''}
   ${handleStyleCommon}
